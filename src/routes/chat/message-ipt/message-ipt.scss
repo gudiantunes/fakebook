@@ -1,0 +1,47 @@
+.m-input {
+    // border: 2px solid white;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+
+    &__message {
+        resize: none;
+        background-color: #222;
+        align-self: flex-end;
+        border-radius: 0.4rem;
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        margin: 0.5rem;
+        caret-color: #ddd;
+        color: white;
+        scrollbar-width: 0.1rem;
+        scrollbar-color: red;
+        
+        &::-webkit-scrollbar {
+           width: 0.8rem;
+           border-radius: 2rem;
+           background-color: #444;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #666;
+            border-radius: 1rem;
+        }
+    }
+
+    &__send{
+        margin: 0.5rem 0.9rem;
+        margin-top: auto;
+        padding: 1rem;
+        border-radius: 50%;
+        background-color: #282c34;
+        border: 2px solid #555;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.1, 1.1);
+        }
+        &__icon {
+            margin: auto;
+            color: white;
+            height: 2rem;
+        }
+    }
+}

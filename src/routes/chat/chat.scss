@@ -1,0 +1,8 @@
+.chat-page {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-rows: 2fr 0.1fr;
+    box-sizing: border-box;
+    height: 100vh;
+}

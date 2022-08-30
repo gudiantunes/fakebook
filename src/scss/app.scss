@@ -1,0 +1,17 @@
+$color: transparent;
+
+body {
+    background-color: #102041;
+}
+
+.App {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: white
+}

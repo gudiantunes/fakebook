@@ -1,0 +1,24 @@
+.list {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    color: white;
+    display: flex;
+    grid-area: 0.5rem;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    // margin: 1rem;
+    &:hover {
+        background-color: #222;
+    }
+    & > .icon {
+        margin: 0 1rem 0 0.5rem;
+        color: red;
+        height: 1.5rem;
+    }
+    
+    &.online > .icon {
+        color: green;
+    }
+
+}

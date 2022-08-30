@@ -1,0 +1,45 @@
+.sidebar {
+    // border: 2px solid #222;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    padding: 0.5rem;
+    background-color: #282c34;
+
+    h1 {
+        margin: 1rem 0;
+    }
+
+    & > form {
+        display: flex;
+        gap: 0.5rem;
+
+        & > input {
+            width: 100%;
+            padding: 0.3rem;
+            outline: none;
+            border: 1px solid gray;
+            border-radius: 0.5rem;
+            background-color: #222;
+            color: white;
+        }
+
+        & > button {
+            background-color: #222;
+            color: white;
+            border: 1px solid gray;
+            border-radius: 0.5rem;
+            padding: 0 1rem;
+            cursor: pointer;
+            &:hover {
+                background-color: #111;
+            }
+        }
+    }
+}
+
+.friend-list {
+    margin-top: 0.5rem;
+    display: grid;
+    gap: 0.5rem;
+}
