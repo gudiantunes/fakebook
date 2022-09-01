@@ -1,28 +1,15 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-const useLoginLogic = (mode) => {
+const useLoginLogic = ({mode, props}) => {
     const [loginMode, setLoginMode] = useState(mode);
-    const [gotoHome, setGotoHome] = useState(false);
-    const [users, setUsers] = useState({});
-
-    const getUsers = async () => {
-        const {data} = await axios.get("http://localhost:3000/users");
-        setUsers(data)
-    }
-
-    useEffect(()=>{getUsers()}, [])
-
     const tryLogin = (event) => {
         event.preventDefault();
-        getUsers()
         
-        const emails = Object.keys(users);
+        const emails = Object.keys(props.usersData);
         const email = event.target.querySelector('.email').value;
 
         if (emails.includes(email)) {
-            console.log('login');
-            setGotoHome(true);
+            props.navigate(`/?user=${email}`)
         } else {
             console.log('not-login');
         }
@@ -32,7 +19,7 @@ const useLoginLogic = (mode) => {
         return 'a'
     }
 
-    return {loginMode, setLoginMode, tryLogin, tryRegister, gotoHome};
+    return {loginMode, setLoginMode, tryLogin, tryRegister};
 }
  
 export default useLoginLogic;

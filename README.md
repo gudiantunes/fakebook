@@ -1,3 +1,5 @@
+# WIP
+
 # "Simple" app with the funcionalities of a chat for testing React Topics
 
 ## Topics:

@@ -1,6 +1,5 @@
 import useLoginLogic from "./login-logic";
 import './login.scss';
-import {Navigate} from 'react-router-dom';
 
 const LoginForm = (props) => {
     return (
@@ -25,8 +24,8 @@ const RegisterForm = () => {
 
 
 const LoginPage = (props) => {
-    const {loginMode, setLoginMode, tryLogin, tryRegister, gotoHome} = useLoginLogic('login');
-    
+    const {loginMode, setLoginMode, tryLogin, tryRegister} = useLoginLogic({mode:'login', props});
+
     return ( 
         <div id="login">
             <h1>LOGIN</h1>
@@ -36,7 +35,6 @@ const LoginPage = (props) => {
             </header>
             {loginMode === 'login' && <LoginForm onSubmit={tryLogin}/>}
             {loginMode === 'register' && <RegisterForm onSubmit={tryRegister}/>}
-            {gotoHome && <Navigate replace to='/'/>}
             <p>Error logs and stuff</p>
         </div>
      );

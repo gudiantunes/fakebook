@@ -22,7 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "json-server --watch database/api.json --port 3001 & npm start"
+    "dev": "json-server --watch database/api.json --port 3001"
   },
   "eslintConfig": {
     "extends": [

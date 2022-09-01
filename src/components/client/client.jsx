@@ -2,22 +2,37 @@ import "./client.scss";
 import ChatPage from "../../routes/chat/chat";
 import LoginPage from "../../routes/login/login";
 import React from "react";
-import { 
-    BrowserRouter as Router,
-    Route, 
-    Routes
-} from "react-router-dom";
+import useClientLogic from "./client-logic.jsx";
 
+let urlParam = '';
 const Client = (props) => {
+  const {clientUrl, setClientUrl} = useClientLogic();
+
+  function navigate(url) {
+    let newUrl = url;
+    if (url.includes('?')) {
+      const param = url.slice(url.indexOf('?')+1);
+      urlParam = param;
+      newUrl = url.slice(0, url.indexOf('?'));
+      console.log(url, newUrl, urlParam);
+    }
+    setClientUrl(newUrl);
+  }
+
+  const getPage = () => {
+    console.log('page param: ' + urlParam)
+    if (clientUrl === '/') {
+      return <ChatPage navigate={navigate} param={urlParam}/>
+    } else if (clientUrl === '/login') {
+      return <LoginPage navigate={navigate} usersData={props.apiData.usersData}/>
+    }
+    urlParam = '';
+  }
+
   return (
-    <Router>
       <div className="client">
-        <Routes>
-          <Route path="/" element={<ChatPage />} />
-          <Route path="/login" element={<LoginPage />} />
-        </Routes>
+        {getPage()}
       </div>
-    </Router>
   );
 };
 

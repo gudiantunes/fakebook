@@ -4,14 +4,12 @@ import MessageInput from "./message-ipt/messsage-ipt.jsx";
 import './chat.scss';
 
 import useChatLogic from "./chat-logic.jsx";
-import {Navigate} from 'react-router-dom';
 
 const ChatPage = (props) => {
-    const {isLogged} = useChatLogic();
+    const {isLogged} = useChatLogic(props);
 
     return ( 
         <div className="chat-page">
-            {isLogged && <Navigate replace to="/login"/>}
             <Chat/>
             <Sidebar/>
             <MessageInput/>
