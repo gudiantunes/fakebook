@@ -1,14 +1,24 @@
-import './client.scss';
-import MessageInput from '../../routes/chat/message-ipt/messsage-ipt';
-import Sidebar from '../sidebar/sidebar';
-import Chat from '../chat/chat';
-import ChatPage from '../../routes/chat/chat'
+import "./client.scss";
+import ChatPage from "../../routes/chat/chat";
+import LoginPage from "../../routes/login/login";
+import React from "react";
+import { 
+    BrowserRouter as Router,
+    Route, 
+    Routes
+} from "react-router-dom";
+
 const Client = (props) => {
-    return ( 
-        <dic className='client'>
-            <ChatPage/>
-        </dic>
-     );
-}
- 
+  return (
+    <Router>
+      <div className="client">
+        <Routes>
+          <Route path="/" element={<ChatPage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+};
+
 export default Client;

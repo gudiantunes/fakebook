@@ -1,0 +1,22 @@
+{
+    "users" : {
+        "mail@mail.com": {
+            "name": "User Name",
+            "password": "password",
+            "friends": [[], []]
+        },
+        "mail2@mail.com": {
+            "name": "User Name 2",
+            "password": "password",
+            "friends": [[], []]
+        }
+    },
+    "messages": {
+        "12345678": {
+            "from": "mail@mail.com",
+            "to": "mail2@mail.com",
+            "time": "now",
+            "body": "This ia a message"
+        }
+    }
+}
