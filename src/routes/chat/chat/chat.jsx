@@ -6,7 +6,7 @@ const Chat = (props) => {
             <header>
                 <h1>@</h1>
                 <h2>User Name</h2>
-                
+                <div className="logout"> logout </div>
             </header>
         </div>
      );

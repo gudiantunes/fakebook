@@ -51,7 +51,7 @@ function App() {
   return (
     <div className="App">
       {/* <button onClick={()=>{setNeedUpdate(!needUpdate)}}>CLick</button> */}
-      <Client name='Client1' apiData={{usersData, messageData}}/>
+      <Client name='Client1' apiData={{usersData, messageData, setUsersData, setMessageData}}/>
       {/* <Client name='Client 2'/> */}
     </div>
   );

@@ -11,12 +11,12 @@ const LoginForm = (props) => {
     );
 }
 
-const RegisterForm = () => {
+const RegisterForm = (props) => {
     return (
-        <form className="login__register">
-            <input type="text" required/>
-            <input type="email" required/>
-            <input type="password" required/>
+        <form className="login__register" onSubmit={props.onSubmit}>
+            <input type="text" required className="name"/>
+            <input type="email" required className="email"/>
+            <input type="password" required className="password"/>
             <button>Register</button>
         </form>
     );
@@ -35,7 +35,7 @@ const LoginPage = (props) => {
             </header>
             {loginMode === 'login' && <LoginForm onSubmit={tryLogin}/>}
             {loginMode === 'register' && <RegisterForm onSubmit={tryRegister}/>}
-            <p>Error logs and stuff</p>
+            <p>TODO: Show login info (wrong passowrd, existing user, etc.)</p>
         </div>
      );
 }

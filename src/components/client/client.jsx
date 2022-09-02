@@ -19,12 +19,25 @@ const Client = (props) => {
     setClientUrl(newUrl);
   }
 
+  const addNewUser = (user) => {
+    const newUsers = {...props.apiData.usersData, ...user};
+    console.log(newUsers);
+
+    props.apiData.setUsersData(newUsers);
+  }
+
+  const storeClientData = (data) => {
+    const oldData = localStorage[props.name] || {};
+    const newData = {...oldData, ...data};
+    localStorage.setItem(`${props.name}-sessions`, JSON.stringify(newData));
+  }
+
   const getPage = () => {
     console.log('page param: ' + urlParam)
     if (clientUrl === '/') {
-      return <ChatPage navigate={navigate} param={urlParam}/>
+      return <ChatPage navigate={navigate} param={urlParam} saveData={storeClientData} clientName={props.name}/>
     } else if (clientUrl === '/login') {
-      return <LoginPage navigate={navigate} usersData={props.apiData.usersData}/>
+      return <LoginPage navigate={navigate} usersData={props.apiData.usersData} addUser={addNewUser}/>
     }
     urlParam = '';
   }

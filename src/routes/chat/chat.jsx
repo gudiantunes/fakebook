@@ -6,7 +6,7 @@ import './chat.scss';
 import useChatLogic from "./chat-logic.jsx";
 
 const ChatPage = (props) => {
-    const {isLogged} = useChatLogic(props);
+    const {isLogged, session} = useChatLogic(props);
 
     return ( 
         <div className="chat-page">
